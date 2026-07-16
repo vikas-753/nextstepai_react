@@ -1,0 +1,474 @@
+/* CareerMap AI - Visual Identity System (React version) */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --canvas-bg: #fdfbf7;
+    --pencil-color: #2c2e35;
+    --pencil-light: #5a5f6e;
+    --pencil-shadow: #1e2025;
+    --watercolor-blue: #4f5d95;
+    --watercolor-blue-light: rgba(79, 93, 149, 0.15);
+    --watercolor-coral: #e28774;
+    --watercolor-coral-light: rgba(226, 135, 116, 0.15);
+    --watercolor-yellow: #f5d471;
+    --watercolor-yellow-light: rgba(245, 212, 113, 0.2);
+    --pencil-border: 2px solid var(--pencil-color);
+}
+
+body {
+    background-color: var(--canvas-bg);
+    color: var(--pencil-color);
+    font-family: 'Outfit', sans-serif;
+    background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0),
+        radial-gradient(rgba(0, 0, 0, 0.02) 2px, transparent 0);
+    background-size: 24px 24px, 48px 48px;
+    background-attachment: fixed;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+/* Handwritten Typography */
+.handwritten {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+
+.title-sketch {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    position: relative;
+    display: inline-block;
+    color: var(--pencil-color);
+    margin-bottom: 1rem;
+}
+
+.title-sketch::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background: var(--watercolor-coral);
+    border-radius: 4px;
+    opacity: 0.7;
+    transform: rotate(-1.5deg);
+}
+
+/* Custom Navigation */
+.navbar-sketch {
+    background: transparent;
+    border-bottom: 2px dashed var(--pencil-light);
+    padding: 1.5rem 1rem;
+}
+
+.navbar-brand-sketch {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--pencil-color) !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-brand-sketch span {
+    color: var(--watercolor-blue);
+    margin-left: 5px;
+}
+
+.nav-link-sketch {
+    color: var(--pencil-color) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-link-sketch::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--watercolor-blue);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link-sketch:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Hand-drawn Cards */
+.sketch-card {
+    background: #ffffff;
+    border: var(--pencil-border);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    box-shadow: 6px 6px 0px var(--pencil-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.sketch-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px var(--watercolor-blue);
+}
+
+/* Watercolor Accents */
+.watercolor-bg-blue {
+    background-image: radial-gradient(var(--watercolor-blue-light) 60%, transparent 100%);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.watercolor-bg-coral {
+    background-image: radial-gradient(var(--watercolor-coral-light) 60%, transparent 100%);
+    background-size: 220px 220px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.watercolor-bg-yellow {
+    background-image: radial-gradient(var(--watercolor-yellow-light) 60%, transparent 100%);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Buttons */
+.btn-sketch {
+    background: transparent;
+    color: var(--pencil-color);
+    border: var(--pencil-border);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 120px 20px 100px 30px / 30px 100px 20px 120px;
+    box-shadow: 4px 4px 0px var(--pencil-color);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-sketch:hover {
+    background: var(--pencil-color);
+    color: var(--canvas-bg);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--watercolor-coral);
+}
+
+.btn-sketch-primary {
+    background: var(--watercolor-blue);
+    color: white;
+    border: var(--pencil-border);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 120px 20px 100px 30px / 30px 100px 20px 120px;
+    box-shadow: 4px 4px 0px var(--pencil-color);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-sketch-primary:hover {
+    background: var(--watercolor-blue);
+    opacity: 0.95;
+    color: white;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--watercolor-yellow);
+}
+
+.btn-sketch-secondary {
+    background: var(--watercolor-coral);
+    color: white;
+    border: var(--pencil-border);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 120px 20px 100px 30px / 30px 100px 20px 120px;
+    box-shadow: 4px 4px 0px var(--pencil-color);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-sketch-secondary:hover {
+    background: var(--watercolor-coral);
+    opacity: 0.95;
+    color: white;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--pencil-color);
+}
+
+/* Custom Form Controls */
+.form-control-sketch {
+    border: var(--pencil-border);
+    border-radius: 20px 50px 30px 40px / 40px 30px 50px 20px;
+    background: transparent;
+    padding: 0.8rem 1.2rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--pencil-color);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.form-control-sketch:focus {
+    outline: none;
+    box-shadow: 3px 3px 0px var(--watercolor-blue);
+    background: #ffffff;
+    color: var(--pencil-color);
+    border-color: var(--pencil-color);
+}
+
+/* Custom Checkbox/Radio */
+.option-box {
+    border: 2px solid var(--pencil-light);
+    border-radius: 15px 50px 20px 45px / 45px 20px 50px 15px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.option-box:hover {
+    border-color: var(--pencil-color);
+    background: var(--watercolor-yellow-light);
+    transform: rotate(-0.5deg);
+}
+
+.option-box.selected {
+    border-color: var(--watercolor-blue);
+    background-color: var(--watercolor-blue-light);
+    box-shadow: 3px 3px 0px var(--pencil-color);
+}
+
+.option-box input {
+    margin-right: 15px;
+    accent-color: var(--watercolor-blue);
+    transform: scale(1.2);
+}
+
+/* Step Wizard Progress */
+.wizard-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.wizard-progress::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--pencil-light);
+    z-index: 1;
+}
+
+.wizard-step {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--canvas-bg);
+    border: var(--pencil-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.wizard-step.active {
+    background: var(--watercolor-blue);
+    color: white;
+    box-shadow: 3px 3px 0px var(--pencil-color);
+    transform: scale(1.1);
+}
+
+.wizard-step.completed {
+    background: var(--watercolor-yellow);
+    color: var(--pencil-color);
+}
+
+/* Custom Slider */
+.slider-sketch {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: var(--pencil-light);
+    outline: none;
+    border: 1px solid var(--pencil-color);
+}
+
+.slider-sketch::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--watercolor-coral);
+    border: 2px solid var(--pencil-color);
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--pencil-color);
+    transition: transform 0.1s ease;
+}
+
+.slider-sketch::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Custom Dashboard Widgets */
+.career-card {
+    border: var(--pencil-border);
+    border-radius: 20px 10px 30px 15px / 15px 30px 10px 20px;
+    padding: 1.5rem;
+    background: #ffffff;
+    box-shadow: 4px 4px 0px var(--pencil-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.career-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(var(--watercolor-yellow-light) 60%, transparent 100%);
+    opacity: 0.8;
+}
+
+.score-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--watercolor-blue);
+    transform: rotate(5deg);
+    border: 1px dashed var(--pencil-color);
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+/* Roadmap timeline */
+.roadmap-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    width: 2px;
+    height: calc(100% - 20px);
+    border-left: 2px dashed var(--pencil-light);
+}
+
+.roadmap-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.roadmap-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--watercolor-coral);
+    border: 2px solid var(--pencil-color);
+    box-shadow: 1px 1px 0px var(--pencil-color);
+}
+
+/* Footer Section */
+.footer-sketch {
+    border-top: 2px dashed var(--pencil-light);
+    padding: 3rem 0;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+/* Utility Styles */
+.highlight-yellow {
+    background-image: linear-gradient(120deg, var(--watercolor-yellow-light) 0%, var(--watercolor-yellow-light) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 80%;
+    padding: 0 4px;
+}
+
+.highlight-coral {
+    background-image: linear-gradient(120deg, var(--watercolor-coral-light) 0%, var(--watercolor-coral-light) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 80%;
+    padding: 0 4px;
+}
+
+.highlight-blue {
+    background-image: linear-gradient(120deg, var(--watercolor-blue-light) 0%, var(--watercolor-blue-light) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 80%;
+    padding: 0 4px;
+}
+
+/* Print Styles for Report Download */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: 'Outfit', sans-serif !important;
+    }
+    .navbar-sketch, .footer-sketch, .btn-sketch, .btn-sketch-primary, .btn-sketch-secondary, .no-print {
+        display: none !important;
+    }
+    .sketch-card {
+        box-shadow: none !important;
+        border: 1px solid #000000 !important;
+        page-break-inside: avoid;
+    }
+    .career-card {
+        box-shadow: none !important;
+        border: 1px solid #000000 !important;
+        page-break-inside: avoid;
+    }
+}
