@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Cream paper background, charcoal ink, coral accent — "sketch" aesthetic */
+  --background: #f4f1ea;
+  --foreground: #2c2e35;
+  --card: #fbf9f4;
+  --card-foreground: #2c2e35;
+  --popover: #fbf9f4;
+  --popover-foreground: #2c2e35;
+  --primary: #2c2e35;
+  --primary-foreground: #f7f5ef;
+  --secondary: #eae5d9;
+  --secondary-foreground: #2c2e35;
+  --muted: #eae5d9;
+  --muted-foreground: #6b6a63;
+  --accent: #e28774;
+  --accent-foreground: #2c2e35;
+  --destructive: #c0503b;
+  --destructive-foreground: #f7f5ef;
+  --border: #2c2e35;
+  --input: #d8d2c4;
+  --ring: #e28774;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Hand-drawn "sketch" card: hard offset shadow + solid ink border */
+.sketch-border {
+  border: 2px solid var(--foreground);
+  box-shadow: 4px 4px 0 0 var(--foreground);
+}
+
+.sketch-border-sm {
+  border: 2px solid var(--foreground);
+  box-shadow: 2px 2px 0 0 var(--foreground);
+}
+
+.sketch-border-accent {
+  border: 2px solid var(--foreground);
+  box-shadow: 4px 4px 0 0 var(--accent);
+}
+
+.sketch-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sketch-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--foreground);
+}
+.sketch-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 0 var(--foreground);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .sketch-border,
+  .sketch-border-sm,
+  .sketch-border-accent {
+    box-shadow: none;
+  }
+}
